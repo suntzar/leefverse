@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Gerador de Verciculos Biblicos" />
+    <meta name="keywords" content="HTML, CSS, JavaScript" />
+    <meta name="author" content="L7 | suntsar" />
+    <title>LEEF VERSE</title>
+    <link rel="icon" type="image/png" href="favicon.png" />
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+  <body>
+    <loading
+      id="loading"
+      style="
+        background: var(--color-z);
+        width: 100vw;
+        height: 100vh;
+        position: fixed;
+        z-index: 100;
+        display: flex;
+        transition: 2s;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+      "
+    >
+      <!--h1 style="color: var(--color-f); margin: 2rem"><span style="color: var(--color-p)">LEEF</span> VERSE</h1-->
+      <lord-icon
+        id="icon"
+        src="https://cdn.lordicon.com/omiqopzf.json"
+        trigger="loop"
+        state="loop-book"
+        style="width: 10rem; height: 10rem"
+        colors="primary:#ada1ca"
+      ></lord-icon>
+      <div style="padding: 2rem"></div>
+    </loading>
+    <!-- BARRA SUPERIOR -->
+    <header onclick="">
+      <span class="tbar"></span>
+    </header>
+    <!-- PAGINA PRINCIPAL -->
+    <home id="home">
+      <div class="bible-cont">
+        <p class="bible-title">Explorar a Bíblia Sagrada</p>
+        <br />
+        <div class="bible-selects">
+          <div class="bible-book">
+            <select id="bible-sel" class="bible-sel"></select>
+          </div>
+          <div class="bible-chap">
+            <select id="bible-cap" class="bible-sel"></select>
+          </div>
+        </div>
+        <button onclick="searchCap(); page_read();" class="bible-btn">
+          Buscar
+        </button>
+      </div>
+      <div class="imgCont">
+        <img id="img_id_1" class="img" alt="cloud" />
+        <div class="imgText">
+          Porque Deus amou o mundo tanto, que deu o seu único Filho, para que
+          todo aquele que nele crer não morra, mas tenha a vida eterna.
+        </div>
+      </div>
+
+      <div class="theme-cont">
+        <p class="theme-title">Selecione um tema</p>
+        <br />
+        <ul id="theme-list" class="theme-list"></ul>
+      </div>
+    </home>
+    <!-- PAGINA DE LEITURA -->
+    <main id="read">
+      <!-- TITULO -->
+      <div id="title" class="title"></div>
+      <!-- SUBTITULO(TITULO) -->
+      <p id="subt" class="subt"></p>
+      <!-- VERSICULOS -->
+      <div id="verses" class="v"></div>
+    </main>
+    <!-- BARRA INFERIOR -->
+    <navbar id="navbar">
+      <button onclick="encontrarLivro();" class="more"><b>MAIS</b></button>
+      <input type="text" class="search" id="search" placeholder="aleatório" />
+    </navbar>
+    <!-- JS -->
+    <script src="https://unpkg.com/typed.js@2.1.0/dist/typed.umd.js"></script>
+    <script type="text/javascript" src="js/script.js"></script>
+    <script src="https://unpkg.com/duo-icons@latest"></script>
+    <script src="https://cdn.lordicon.com/lordicon.js"></script>
+  </body>
+</html>
+
+<!-- ANOTAÇÕES:
+
+  onclick="carregarVersiculos(); atualizarIconeAleatorio();"
+
+-->

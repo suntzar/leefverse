@@ -1,0 +1,344 @@
+@import url("https://fonts.googleapis.com/css2?family=Flow+Rounded&family=M+PLUS+Rounded+1c&family=Varela+Round&display=swap");
+
+:root {
+  --color-p: #3b3b44;
+  --color-s: #3b3b44;
+  --color-f: #3b3b44;
+  --color-z: #3b3b44;
+  --color-zf: #3b3b44;
+  --color-y: #3b3b44;
+  --color-yf: #3b3b44;
+  --color-sf: #3b3b44;
+}
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: console;
+  font-family: "Flow Rounded", system-ui;
+  font-family: "Varela Round", sans-serif;
+  transition: 0.5s;
+  outline: none;
+}
+
+::-webkit-scrollbar {
+  display: none;
+}
+
+@font-face {
+  font-family: "hot";
+  src: url("/font/hot.ttf");
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "warm";
+  src: url("/font/warm.otf");
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "cold";
+  src: url("/font/cold.ttf");
+  font-display: swap;
+}
+
+body {
+  width: 200vw;
+  height: 100vh;
+  background: var(--color-z);
+  color: var(--color-f);
+  font-family: console;
+  display: flex;
+  position: fixed;
+  scrollbar-width: none;
+}
+
+body,
+html {
+  overflow: hidden;
+  overflow-y: scroll;
+}
+
+main,
+home {
+  padding-bottom: 10vh;
+  position: absolute;
+  width: 100vw;
+  height: 100vh;
+  overflow: scroll;
+  transition: 0.5s;
+}
+
+header {
+  position: fixed;
+  top: 0;
+  width: 100vw;
+  padding: 1.6rem;
+  font-size: 1.1rem;
+  display: flex;
+  align-items: center;
+  background-color: var(--color-yf);
+  backdrop-filter: blur(0.3rem);
+  z-index: 1;
+}
+
+header * {
+  text-align: center;
+  color: var(--color-f);
+  font-family: "warm";
+  font-size: 1rem;
+}
+
+.title {
+  margin-top: 10rem;
+  text-align: center;
+  color: var(--color-p);
+  font-family: "hot";
+  font-size: 2rem;
+}
+
+.subt {
+  text-align: center;
+  color: var(--color-s);
+  font-family: "warm";
+  font-size: 1rem;
+  margin-bottom: 0.5rem;
+}
+
+.v {
+  margin-left: 1rem;
+  margin-right: 1rem;
+  padding: 0.5rem;
+  font-size: 0.8rem;
+  color: var(--color-f);
+  text-align: justify;
+  transition: 1s;
+}
+
+.marcar,
+.marcar-c,
+.marcar-b,
+.marcar-m {
+  color: var(--color-p);
+  background: var(--color-yf);
+  opacity: 1;
+  border-radius: 1rem;
+}
+.marcar-c {
+  border-radius: 1rem 1rem 0 0;
+}
+.marcar-b {
+  border-radius: 0 0 1rem 1rem;
+}
+.marcar-m {
+  border-radius: 0;
+}
+
+colors {
+  position: absolute;
+  right: 0;
+  margin: 0.5rem;
+  display: flex;
+}
+
+.color1,
+.color2 {
+  width: 1.9rem;
+  height: 1.9rem;
+  background-color: #9bbf93;
+  border-radius: 50%;
+  margin: 0.5rem;
+  border: 0.3rem solid var(--color-f);
+}
+
+.color2 {
+  background-color: #b9a990;
+}
+
+navbar {
+  width: 100vw;
+  background-color: var(--color-yf);
+  backdrop-filter: blur(0.4rem);
+  border-radius: 1.5rem 1.5rem 0 0;
+  position: fixed;
+  bottom: 0;
+  transition: 1s;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 0 1rem #0000001d;
+  padding-bottom: 2vh;
+}
+
+navbar:hover > .search {
+  background-color: var(--color-z);
+  padding: 0.5rem;
+  border: 1px solid var(--color-s);
+  box-shadow: 0 0 1rem var(--color-s);
+  color: var(--color-p);
+  margin: 2.8rem 0 1rem 0;
+}
+
+.search {
+  min-width: 50vw;
+  height: 1.8rem;
+  border-radius: 0.5rem;
+  position: relative;
+  text-align: center;
+  outline: none;
+  font-size: 0.6rem;
+  margin: 0;
+  padding: 0;
+  box-shadow: none;
+  color: transparent;
+  border: none;
+  background-color: transparent;
+  z-index: 1;
+}
+
+.more {
+  width: 8rem;
+  height: 3rem;
+  color: var(--color-z);
+  background-color: var(--color-p);
+  border-radius: 10rem;
+  border: none;
+  position: absolute;
+  top: -1.5rem;
+  left: 50%;
+  font-size: 1rem;
+  transform: translateX(-50%);
+  box-shadow: 0px 1rem 10rem #0000003e;
+  font-family: "warm";
+  transition: 0.4s;
+  outline: none;
+  z-index: 2;
+}
+
+.more:hover {
+  transform: scale(1.1) translateX(-55%);
+  left: 52.5%;
+}
+
+.bible-cont {
+  margin: 1.5rem;
+  margin-top: 6rem;
+  padding: 1rem;
+  border-radius: 1rem;
+  background: var(--color-yf);
+  overflow: hidden;
+  box-shadow: 0 0.5rem 0.5rem rgba(0, 0, 0, 0.1);
+}
+
+.bible-title {
+  color: var(--color-p);
+  font-size: 1.2em;
+  text-align: center;
+}
+
+.bible-selects {
+  display: flex;
+  justify-content: space-around;
+  margin-bottom: 1rem;
+}
+
+.bible-selects div {
+  text-align: center;
+}
+
+.bible-sel,
+.bible-inp {
+  width: 8rem;
+  padding: 0.6rem;
+  border: none;
+  border-radius: 0.5rem;
+  text-align: center;
+  background-color: var(--color-z);
+  color: var(--color-f);
+}
+
+.bible-btn {
+  width: 100%;
+  padding: 0.5rem;
+  background-color: var(--color-p);
+  color: var(--color-y);
+  border: none;
+  border-radius: 0.5rem;
+}
+
+.imgCont {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.img {
+  width: 90vw;
+  height: auto;
+  border-radius: 0.6rem;
+  overflow: hidden;
+  box-shadow: 0 0.2rem 0.5rem rgba(0, 0, 0, 0.1);
+  margin: 5vw;
+  margin-top: 0;
+  opacity: 0.3;
+  border: 0.3rem solid var(--color-p);
+}
+
+.imgText {
+  width: 80%;
+  text-align: center;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 1.5em;
+  color: var(--color-p);
+  font-weight: bold;
+  font-family: warm;
+}
+
+.theme-cont {
+  margin: 1.5rem;
+  margin-top: 0;
+  padding: 1rem;
+  border-radius: 1rem;
+  background: var(--color-yf);
+  overflow: hidden;
+  box-shadow: 0 0.5rem 0.5rem rgba(0, 0, 0, 0.1);
+}
+.theme-title {
+  color: var(--color-p);
+  font-size: 1.2em;
+  text-align: center;
+}
+.theme-list {
+  list-style: none;
+  padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin-bottom: 0.2rem;
+}
+.theme-list li {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 0.5rem;
+  margin-bottom: 0;
+}
+.theme-box {
+  width: 2rem;
+  height: 2rem;
+  background-color: #9bbf93;
+  border-radius: 0.7rem;
+  margin: 0.2rem;
+  border: 0.3rem solid var(--color-f);
+}
+.theme-box:hover {
+  transform: scale(1.2);
+  box-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
+}

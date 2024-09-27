@@ -1,0 +1,332 @@
+[
+    {
+        "book_number": 10,
+        "short_name": "Gn",
+        "name": "G\u00eanesis"
+    },
+    {
+        "book_number": 20,
+        "short_name": "\u00cax",
+        "name": "\u00caxodo"
+    },
+    {
+        "book_number": 30,
+        "short_name": "Lv",
+        "name": "Lev\u00edtico"
+    },
+    {
+        "book_number": 40,
+        "short_name": "Nm",
+        "name": "N\u00fameros"
+    },
+    {
+        "book_number": 50,
+        "short_name": "Dt",
+        "name": "Deuteron\u00f4mio"
+    },
+    {
+        "book_number": 60,
+        "short_name": "Js",
+        "name": "Josu\u00e9"
+    },
+    {
+        "book_number": 70,
+        "short_name": "Jz",
+        "name": "Ju\u00edzes"
+    },
+    {
+        "book_number": 80,
+        "short_name": "Rt",
+        "name": "Rute"
+    },
+    {
+        "book_number": 90,
+        "short_name": "1Sm",
+        "name": "1Samuel"
+    },
+    {
+        "book_number": 100,
+        "short_name": "2Sm",
+        "name": "2Samuel"
+    },
+    {
+        "book_number": 110,
+        "short_name": "1Rs",
+        "name": "1Reis"
+    },
+    {
+        "book_number": 120,
+        "short_name": "2Rs",
+        "name": "2Reis"
+    },
+    {
+        "book_number": 130,
+        "short_name": "1Cr",
+        "name": "1Cr\u00f4nicas"
+    },
+    {
+        "book_number": 140,
+        "short_name": "2Cr",
+        "name": "2Cr\u00f4nicas"
+    },
+    {
+        "book_number": 150,
+        "short_name": "Ed",
+        "name": "Esdras"
+    },
+    {
+        "book_number": 160,
+        "short_name": "Ne",
+        "name": "Neemias"
+    },
+    {
+        "book_number": 190,
+        "short_name": "Et",
+        "name": "Ester"
+    },
+    {
+        "book_number": 220,
+        "short_name": "J\u00f3",
+        "name": "J\u00f3"
+    },
+    {
+        "book_number": 230,
+        "short_name": "Sl",
+        "name": "Salmos"
+    },
+    {
+        "book_number": 240,
+        "short_name": "Pv",
+        "name": "Prov\u00e9rbios"
+    },
+    {
+        "book_number": 250,
+        "short_name": "Ec",
+        "name": "Eclesiastes"
+    },
+    {
+        "book_number": 260,
+        "short_name": "Ct",
+        "name": "C\u00e2ntico"
+    },
+    {
+        "book_number": 290,
+        "short_name": "Is",
+        "name": "Isa\u00edas"
+    },
+    {
+        "book_number": 300,
+        "short_name": "Jr",
+        "name": "Jeremias"
+    },
+    {
+        "book_number": 310,
+        "short_name": "Lm",
+        "name": "Lamenta\u00e7\u00f5es"
+    },
+    {
+        "book_number": 330,
+        "short_name": "Ez",
+        "name": "Ezequiel"
+    },
+    {
+        "book_number": 340,
+        "short_name": "Dn",
+        "name": "Daniel"
+    },
+    {
+        "book_number": 350,
+        "short_name": "Os",
+        "name": "Oseias"
+    },
+    {
+        "book_number": 360,
+        "short_name": "Jl",
+        "name": "Joel"
+    },
+    {
+        "book_number": 370,
+        "short_name": "Am",
+        "name": "Am\u00f3s"
+    },
+    {
+        "book_number": 380,
+        "short_name": "Ob",
+        "name": "Obadias"
+    },
+    {
+        "book_number": 390,
+        "short_name": "Jn",
+        "name": "Jonas"
+    },
+    {
+        "book_number": 400,
+        "short_name": "Mq",
+        "name": "Miqueias"
+    },
+    {
+        "book_number": 410,
+        "short_name": "Na",
+        "name": "Naum"
+    },
+    {
+        "book_number": 420,
+        "short_name": "Hc",
+        "name": "Habacuque"
+    },
+    {
+        "book_number": 430,
+        "short_name": "Sf",
+        "name": "Sofonias"
+    },
+    {
+        "book_number": 440,
+        "short_name": "Ag",
+        "name": "Ageu"
+    },
+    {
+        "book_number": 450,
+        "short_name": "Zc",
+        "name": "Zacarias"
+    },
+    {
+        "book_number": 460,
+        "short_name": "Ml",
+        "name": "Malaquias"
+    },
+    {
+        "book_number": 470,
+        "short_name": "Mt",
+        "name": "Mateus"
+    },
+    {
+        "book_number": 480,
+        "short_name": "Mc",
+        "name": "Marcos"
+    },
+    {
+        "book_number": 490,
+        "short_name": "Lc",
+        "name": "Lucas"
+    },
+    {
+        "book_number": 500,
+        "short_name": "Jo",
+        "name": "Jo\u00e3o"
+    },
+    {
+        "book_number": 510,
+        "short_name": "At",
+        "name": "Atos"
+    },
+    {
+        "book_number": 520,
+        "short_name": "Rm",
+        "name": "Romanos"
+    },
+    {
+        "book_number": 530,
+        "short_name": "1Co",
+        "name": "1Cor\u00edntios"
+    },
+    {
+        "book_number": 540,
+        "short_name": "2Co",
+        "name": "2Cor\u00edntios"
+    },
+    {
+        "book_number": 550,
+        "short_name": "Gl",
+        "name": "G\u00e1latas"
+    },
+    {
+        "book_number": 560,
+        "short_name": "Ef",
+        "name": "Ef\u00e9sios"
+    },
+    {
+        "book_number": 570,
+        "short_name": "Fp",
+        "name": "Filipenses"
+    },
+    {
+        "book_number": 580,
+        "short_name": "Cl",
+        "name": "Colossenses"
+    },
+    {
+        "book_number": 590,
+        "short_name": "1Ts",
+        "name": "1Tessalonicenses"
+    },
+    {
+        "book_number": 600,
+        "short_name": "2Ts",
+        "name": "2Tessalonicenses"
+    },
+    {
+        "book_number": 610,
+        "short_name": "1Tm",
+        "name": "1Tim\u00f3teo"
+    },
+    {
+        "book_number": 620,
+        "short_name": "2Tm",
+        "name": "2Tim\u00f3teo"
+    },
+    {
+        "book_number": 630,
+        "short_name": "Tt",
+        "name": "Tito"
+    },
+    {
+        "book_number": 640,
+        "short_name": "Fm",
+        "name": "Filemom"
+    },
+    {
+        "book_number": 650,
+        "short_name": "Hb",
+        "name": "Hebreus"
+    },
+    {
+        "book_number": 660,
+        "short_name": "Tg",
+        "name": "Tiago"
+    },
+    {
+        "book_number": 670,
+        "short_name": "1Pe",
+        "name": "1Pedro"
+    },
+    {
+        "book_number": 680,
+        "short_name": "2Pe",
+        "name": "2Pedro"
+    },
+    {
+        "book_number": 690,
+        "short_name": "1Jo",
+        "name": "1Jo\u00e3o"
+    },
+    {
+        "book_number": 700,
+        "short_name": "2Jo",
+        "name": "2Jo\u00e3o"
+    },
+    {
+        "book_number": 710,
+        "short_name": "3Jo",
+        "name": "3Jo\u00e3o"
+    },
+    {
+        "book_number": 720,
+        "short_name": "Jd",
+        "name": "Judas"
+    },
+    {
+        "book_number": 730,
+        "short_name": "Ap",
+        "name": "Apocalipse"
+    }
+]
