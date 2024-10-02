@@ -64,7 +64,7 @@ const livros = {
   700: ["2JOÃO", 1],
   710: ["3JOÃO", 1],
   720: ["JUDAS", 1],
-  730: ["APOCALIPSE", 22],
+  730: ["APOCALIPSE", 22]
 };
 
 const timer = (seconds) => {
@@ -104,10 +104,7 @@ function buscarLivroPorCapitulo(capitulo) {
 
 function buscarLivroPorNome(book, numero) {
   for (let livro in livros) {
-    if (
-      removerAcentos(livros[livro][0]).toLowerCase() ===
-      removerAcentos(book).toLowerCase()
-    ) {
+    if (removerAcentos(livros[livro][0]).toLowerCase() === removerAcentos(book).toLowerCase()) {
       carregarVersiculos(livro, parseInt(numero));
       break;
     }
@@ -118,10 +115,7 @@ function extrairNumero(str, i, clss) {
   const regex = /\[(\d+)\]/;
   const correspondencia = str.match(regex);
   const numero = correspondencia ? correspondencia[1] : null;
-  const novaString = str.replace(
-    regex,
-    `</b></p><br>\n\n<p  class="v ${clss}" id="verse_${i}" onclick="marcar(${i})"><span style="color: var(--color-p);"><b>${numero}</b></span>`
-  );
+  const novaString = str.replace(regex, `</b></p><br>\n\n<p  class="v ${clss}" id="verse_${i}" onclick="marcar(${i})"><span style="color: var(--color-p);"><b>${numero}</b></span>`);
 
   return { numero, novaString };
 }
@@ -155,9 +149,7 @@ async function carregarVersiculos(livro, capitulo) {
   atualizarTitulo(titles, livro, capitulo);
   const textos = processarVersiculos(versiculos, marcarp, livro, capitulo);
 
-  document.getElementById(
-    "title"
-  ).innerHTML = `<h2 class='title'>${livros[livro][0]} ${capitulo}</h2>`;
+  document.getElementById("title").innerHTML = `<h2 class='title'>${livros[livro][0]} ${capitulo}</h2>`;
   document.getElementById("verses").innerHTML = textos;
 }
 
@@ -167,9 +159,7 @@ async function carregarDados(url) {
 }
 
 function atualizarTitulo(titles, livro, capitulo) {
-  const title = titles.find(
-    (t) => t.chapter === capitulo && t.book_number === livro * 1
-  );
+  const title = titles.find((t) => t.chapter === capitulo && t.book_number === livro * 1);
   if (title) {
     document.getElementById("subt").innerHTML = title.title;
   }
@@ -177,40 +167,32 @@ function atualizarTitulo(titles, livro, capitulo) {
 
 function processarVersiculos(versiculos, marcarp, livro, capitulo) {
   return versiculos
-    .filter(
-      (v) =>
-        v.chapter === capitulo && v.book_number === livro * 1 && v.text !== ""
-    )
+    .filter((v) => v.chapter === capitulo && v.book_number === livro * 1 && v.text !== "")
     .map((v, i) => {
       const marcar = marcarp[i] || "";
       const verse = extrairNumero(v.text, i, marcar);
-      if (
-        !isNaN(verse.numero) &&
-        !isNaN(parseFloat(verse.numero)) &&
-        verse.numero !== ""
-      ) {
+      if (!isNaN(verse.numero) && !isNaN(parseFloat(verse.numero)) && verse.numero !== "") {
         return `<p style="padding:1.8%;text-align: center;" class="v"><b>${verse.novaString}</p>\n\n`;
       } else if (/\[.*?\]/.test(v.text)) {
-        return `<p class="v ${marcar}" id="verse_${i}" onclick="marcar(${i})">${v.text.replace(
-          /\[(.*?)\]/g,
-          '<span style="color: var(--color-p);"><b>$1</b></span>'
-        )}</p>\n\n`;
+        return `<p class="v ${marcar}" id="verse_${i}" onclick="marcar(${i})">${v.text.replace(/\[(.*?)\]/g, '<span style="color: var(--color-p);"><b>$1</b></span>')}</p>\n\n`;
       } else {
-        return `<p class="v ${marcar}" id="verse_${i}" onclick="marcar(${i})"><span style="color: var(--color-p);"><b>${v.verse}</b></span> ${v.text}</p>\n\n`;
+        return `<i data-duoicon="bookmark"></i><p class="v ${marcar}" id="verse_${i}" onclick="marcar(${i})"><span style="color: var(--color-p);"><b>${v.verse}</b></span> ${v.text}</p>\n\n`;
       }
     })
     .join("");
 }
 
-function getImg() {
+function getRandom(n, m) {
+  return Math.floor(Math.random() * (m - n + 1)) + n;
+}
+
+function getImgAndSet() {
   let apiKey = "44797048-381ef955887bcab451564aada";
   for (let i = 0; i < 50; i++) {
     let idImg = document.getElementById("img_id_" + i);
     if (idImg) {
       let name = idImg.alt;
-      let requestURL =
-        `https://pixabay.com/api/?key=${apiKey}&image_type=photo&orientation=horizontal&category=nature&order=popular&pretty=true&per_page=50&q=` +
-        name;
+      let requestURL = `https://pixabay.com/api/?key=${apiKey}&image_type=photo&orientation=horizontal&category=nature&order=popular&pretty=true&per_page=50&q=` + name;
       fetch(requestURL)
         .then((response) => response.json())
         .then((data) => {
@@ -219,6 +201,22 @@ function getImg() {
         });
     }
   }
+}
+
+function getImg(q) {
+  let apiKey = "44797048-381ef955887bcab451564aada";
+  //let q = "leaf+moss";
+  //let q = "leaf+autumn";
+  //let q = "ice";
+  let requestURL = `https://pixabay.com/api/?key=${apiKey}&image_type=photo&orientation=horizontal&category=nature&order=popular&pretty=true&per_page=100&q=` + q;
+  let idImg = document.getElementById("img_id_1");
+  fetch(requestURL)
+    .then((response) => response.json())
+    .then((data) => {
+      console.log(data.hits);
+      let img = data.hits[getRandom(0, data.hits.length - 1)].webformatURL;
+      idImg.src = img;
+    });
 }
 
 const themes = {
@@ -232,7 +230,7 @@ const themes = {
     "--color-y": "#4f4d5b",
     "--color-yf": "#4d4e5bb7",
     "--color-d": "#313038",
-    "--color-b": "#1c1b21",
+    "--color-b": "#1c1b21"
   },
   dark: {
     "--color-f": "#e4e1e2a5",
@@ -242,7 +240,7 @@ const themes = {
     "--color-z": "#27272a",
     "--color-zf": "#3f3d4a9d",
     "--color-y": "#2c2c2e",
-    "--color-yf": "#363639c3",
+    "--color-yf": "#363639c3"
   },
   red: {
     "--color-f": "#e4e1e2a5",
@@ -252,7 +250,7 @@ const themes = {
     "--color-z": "#3b3b44",
     "--color-zf": "#3f3d4a9d",
     "--color-y": "#4f4d5b",
-    "--color-yf": "#4d4e5bb7",
+    "--color-yf": "#4d4e5bb7"
   },
   orange: {
     "--color-f": "#e4e1e2a5",
@@ -262,7 +260,7 @@ const themes = {
     "--color-z": "#3b3b44",
     "--color-zf": "#3f3d4a9d",
     "--color-y": "#4f4d5b",
-    "--color-yf": "#4d4e5bb7",
+    "--color-yf": "#4d4e5bb7"
   },
   yellow: {
     "--color-f": "#e4e1e2a5",
@@ -272,7 +270,7 @@ const themes = {
     "--color-z": "#3b3b44",
     "--color-zf": "#3f3d4a9d",
     "--color-y": "#4f4d5b",
-    "--color-yf": "#4d4e5bb7",
+    "--color-yf": "#4d4e5bb7"
   },
   green: {
     "--color-f": "#e4e1e2a5",
@@ -282,7 +280,7 @@ const themes = {
     "--color-z": "#3b3b44",
     "--color-zf": "#3f3d4a9d",
     "--color-y": "#4f4d5b",
-    "--color-yf": "#4d4e5bb7",
+    "--color-yf": "#4d4e5bb7"
   },
   blue: {
     "--color-f": "#e4e1e2a5",
@@ -292,7 +290,7 @@ const themes = {
     "--color-z": "#3b3b44",
     "--color-zf": "#3f3d4a9d",
     "--color-y": "#4f4d5b",
-    "--color-yf": "#4d4e5bb7",
+    "--color-yf": "#4d4e5bb7"
   },
   indigo: {
     "--color-f": "#e4e1e2a5",
@@ -302,7 +300,7 @@ const themes = {
     "--color-z": "#3b3b44",
     "--color-zf": "#3f3d4a9d",
     "--color-y": "#4f4d5b",
-    "--color-yf": "#4d4e5bb7",
+    "--color-yf": "#4d4e5bb7"
   },
   violet: {
     "--color-f": "#e4e1e2a5",
@@ -312,8 +310,8 @@ const themes = {
     "--color-z": "#3b3b44",
     "--color-zf": "#3f3d4a9d",
     "--color-y": "#4f4d5b",
-    "--color-yf": "#4d4e5bb7",
-  },
+    "--color-yf": "#4d4e5bb7"
+  }
 };
 
 function applyTheme(theme) {
@@ -322,6 +320,7 @@ function applyTheme(theme) {
   for (const [key, value] of Object.entries(colors)) {
     link.setProperty(key, value);
   }
+  document.getElementById("icon").setAttribute("colors", "primary:" + themes[theme]["--color-p"]);
 }
 
 function themeOptions() {
@@ -332,6 +331,13 @@ function themeOptions() {
     let block = `<li><div class="theme-box" style="background-color: ${themes[theme]["--color-p"]};" onclick="applyTheme('${theme}');"></div></li>`;
     list.innerHTML += block;
   }
+}
+
+function speak() {
+  let msg = new SpeechSynthesisUtterance();
+  msg.text = document.getElementById("imgText").innerHTML;
+  msg.lang = "pt-BR";
+  window.speechSynthesis.speak(msg);
 }
 
 function marcar(i) {
@@ -423,15 +429,6 @@ function page_read() {
   document.getElementById("navbar").style.opacity = 1;
 }
 
-typed = new Typed(".tbar", {
-  strings: [
-    `LEEF`,
-    `LEEF VERSE`,
-    `<span style="color: var(--color-p)">LEEF</span> VERSE`,
-  ],
-  typeSpeed: 50,
-});
-
 const diffMax = 10;
 let xDown = null;
 
@@ -504,12 +501,17 @@ function searchCap() {
   carregarVersiculos(bookId, cap);
 }
 
+typed = new Typed(".tbar", {
+  strings: [`LEEF`, `LEEF VERSE`, `<span style="color: var(--color-p)">LEEF</span> VERSE`],
+  typeSpeed: 50
+});
+
 function onLoad() {
   cache();
   encontrarLivro();
-  getImg();
   themeOptions();
-  applyTheme("nord_green");
+  getImg("sea");
+  applyTheme("blue");
   duoIcons.createIcons();
   loadSelect();
   page_home();

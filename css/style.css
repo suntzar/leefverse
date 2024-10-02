@@ -270,10 +270,10 @@ navbar:hover > .search {
 
 .imgCont {
   width: 100%;
+  min-height: 40vw;
   display: flex;
   justify-content: center;
   position: relative;
-  overflow: hidden;
 }
 
 .img {
